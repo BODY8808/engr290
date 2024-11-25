@@ -397,8 +397,8 @@ void servo_write(uint16_t angle) {
     // Wait for the remainder of the 20 ms period
     unsigned long pulse_duration_ms = pulse_width_us / 1000;
     if (pulse_duration_ms < 20) {
-        delay_ms(20 - pulse_duration_ms);
-    }
+        delay_ms(20 - pulse_duration_ms)}
+            else { delay_ms(1);} // ensuring no negative delay error
 }
 
 void controlYawLED() {
